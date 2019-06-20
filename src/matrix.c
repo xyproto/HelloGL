@@ -1,6 +1,11 @@
 #include <math.h>
 #include "matrix.h"
 
+// M_PI is not defined for C99
+#ifndef M_PI
+#define M_PI (3.14159265358979323846)
+#endif
+
 void vec_normalize(float *x, float *y, float *z) {
     float d = sqrtf((*x) * (*x) + (*y) * (*y) + (*z) * (*z));
     *x /= d; *y /= d; *z /= d;
